@@ -1,3 +1,5 @@
 env
 tmp
 sa.json
+.idea
+.vscode
