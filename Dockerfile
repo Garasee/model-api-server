@@ -3,7 +3,7 @@ FROM python:3.9-slim AS builder
 WORKDIR /app
 
 ARG GOOGLE_CREDENTIALS
-RUN echo ${GOOGLE_CREDENTIALS} > sa.json
+RUN echo ${GOOGLE_CREDENTIALS} | base64 -d > sa.json
 
 FROM python:3.9-slim
 
