@@ -19,6 +19,6 @@ RUN apt-get update && \
 
 COPY --from=builder /app/sa.json /app/sa.json
 
-EXPOSE 5000
+EXPOSE 8080
 
 CMD ["python", "app.py"]
