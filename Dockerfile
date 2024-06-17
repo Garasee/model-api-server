@@ -1,11 +1,11 @@
-FROM python:3.8-slim AS builder
+FROM python:3.9-slim AS builder
 
 WORKDIR /app
 
 ARG GOOGLE_CREDENTIALS
 RUN echo ${GOOGLE_CREDENTIALS} > sa.json
 
-FROM python:3.8-slim
+FROM python:3.9-slim
 
 WORKDIR /app
 
