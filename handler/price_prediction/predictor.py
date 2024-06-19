@@ -5,8 +5,9 @@ from handler.price_prediction.loader import CATEGORICAL_FEATURES
 
 
 def predict_price(payload, model, feature_scaler, target_scaler, encoders):
+    brand = payload['brand'].title()
     data = {
-        "brand": "Toyota" if payload["brand"] not in encoders["brand"].classes_ else payload["brand"],
+        "brand": "Toyota" if brand not in encoders["brand"].classes_ else brand,
         "Kondisi": "Mobil Bekas" if not payload["isNew"] else "Mobil Baru",
         "TahunKendaraan": payload["year"],
         "EngineCC": payload["engineCapacity"],
